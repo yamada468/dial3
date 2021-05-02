@@ -20,7 +20,7 @@ int kando_cnt = 0;
 -(void) test {
     NSLog(@"This is test function.");
     if (NULL != instance) {
-        [instance delmemberWithA:1];
+        [instance delmemberWithA:mode];
     }
 }
 
@@ -29,6 +29,8 @@ int kando_cnt = 0;
 }
 
 -(void) _run {
+    IOHIDManagerRegisterInputValueCallback(manager, &_handleInput, NULL);
+    NSLog(@"_run worker thread. : 0x%x", _handleInput);
     CFRunLoopRun();
 
 //    // デモ
@@ -95,7 +97,7 @@ void _cleanUpHid() {
         return FALSE;
     }
 
-    IOHIDManagerRegisterInputValueCallback(manager, &_handleInput, NULL);
+    //IOHIDManagerRegisterInputValueCallback(manager, &_handleInput, NULL);
     NSLog(@"HID init successfly");
     return TRUE;
 }
@@ -155,7 +157,7 @@ void _changeMode(uint32_t usage, long value) {
 void _changeSignal(uint32_t usage, long value) {
     if (usage == kHIDUsage_GD_Dial) {
         int kando = KANDO_SCROLL;
-        if (MODE_ZOOM == mode) {
+        if ((MODE_ZOOM == mode) || (MODE_VOLUME == mode) || (MODE_BRITE == mode)) {
             kando = KANDO_ZOOM;
         }
         if (kando_cnt >= kando) {
@@ -183,14 +185,22 @@ void _changeSignal(uint32_t usage, long value) {
                 } else if (0 < value) {
                     eventRef = CGEventCreateKeyboardEvent(NULL, kVK_ANSI_Minus, true);
                 }
+                CGEventSetFlags(eventRef, kCGEventFlagMaskCommand);
             } else if (MODE_VOLUME == mode) {
-                
+                if (0 > value) {
+                    eventRef = CGEventCreateKeyboardEvent(NULL, kVK_VolumeUp, true);
+                } else if (0 < value) {
+                    eventRef = CGEventCreateKeyboardEvent(NULL, kVK_VolumeDown, true);
+                }
             } else if (MODE_BRITE == mode) {
-                
+                if (0 > value) {
+                    eventRef = CGEventCreateKeyboardEvent(NULL, kVK_F15, true);
+                } else if (0 < value) {
+                    eventRef = CGEventCreateKeyboardEvent(NULL, kVK_F14, true);
+                }
             }
             
             if (NULL != eventRef) {
-                CGEventSetFlags(eventRef, kCGEventFlagMaskCommand);
                 [events addObject:[NSValue valueWithPointer:eventRef]];
 
                 for (NSValue *event in events) {

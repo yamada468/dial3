@@ -73,7 +73,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             
             NSApplication.shared.terminate(self)
         } else {
-            driver?.test()
             driver?.runHid()
         }
 
