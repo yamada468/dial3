@@ -1,0 +1,613 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		900EA0AF263CC30300D99081 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900EA0AE263CC30300D99081 /* AppDelegate.swift */; };
+		900EA0B1263CC30300D99081 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900EA0B0263CC30300D99081 /* ViewController.swift */; };
+		900EA0B3263CC30300D99081 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 900EA0B2263CC30300D99081 /* Assets.xcassets */; };
+		900EA0B6263CC30300D99081 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 900EA0B4263CC30300D99081 /* Main.storyboard */; };
+		900EA0C2263CC30400D99081 /* dial3Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900EA0C1263CC30400D99081 /* dial3Tests.swift */; };
+		900EA0CD263CC30400D99081 /* dial3UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900EA0CC263CC30400D99081 /* dial3UITests.swift */; };
+		900EA0DB263CC5FF00D99081 /* View1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900EA0DA263CC5FF00D99081 /* View1.swift */; };
+		900EA0DD263CC85D00D99081 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900EA0DC263CC85D00D99081 /* WindowController.swift */; };
+		900EA0E0263CE57D00D99081 /* Driver.m in Sources */ = {isa = PBXBuildFile; fileRef = 900EA0DF263CE57D00D99081 /* Driver.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		900EA0BE263CC30300D99081 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 900EA0A3263CC30300D99081 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 900EA0AA263CC30300D99081;
+			remoteInfo = dial3;
+		};
+		900EA0C9263CC30400D99081 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 900EA0A3263CC30300D99081 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 900EA0AA263CC30300D99081;
+			remoteInfo = dial3;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		900EA0AB263CC30300D99081 /* dial3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dial3.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		900EA0AE263CC30300D99081 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		900EA0B0263CC30300D99081 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		900EA0B2263CC30300D99081 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		900EA0B5263CC30300D99081 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		900EA0B7263CC30300D99081 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		900EA0B8263CC30300D99081 /* dial3.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = dial3.entitlements; sourceTree = "<group>"; };
+		900EA0BD263CC30300D99081 /* dial3Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = dial3Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		900EA0C1263CC30400D99081 /* dial3Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dial3Tests.swift; sourceTree = "<group>"; };
+		900EA0C3263CC30400D99081 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		900EA0C8263CC30400D99081 /* dial3UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = dial3UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		900EA0CC263CC30400D99081 /* dial3UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dial3UITests.swift; sourceTree = "<group>"; };
+		900EA0CE263CC30400D99081 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		900EA0DA263CC5FF00D99081 /* View1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View1.swift; sourceTree = "<group>"; };
+		900EA0DC263CC85D00D99081 /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
+		900EA0DE263CE57D00D99081 /* dial3-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "dial3-Bridging-Header.h"; sourceTree = "<group>"; };
+		900EA0DF263CE57D00D99081 /* Driver.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Driver.m; sourceTree = "<group>"; };
+		900EA0E1263CE8A200D99081 /* Driver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Driver.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		900EA0A8263CC30300D99081 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		900EA0BA263CC30300D99081 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		900EA0C5263CC30400D99081 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		900EA0A2263CC30300D99081 = {
+			isa = PBXGroup;
+			children = (
+				900EA0AD263CC30300D99081 /* dial3 */,
+				900EA0C0263CC30300D99081 /* dial3Tests */,
+				900EA0CB263CC30400D99081 /* dial3UITests */,
+				900EA0AC263CC30300D99081 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		900EA0AC263CC30300D99081 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				900EA0AB263CC30300D99081 /* dial3.app */,
+				900EA0BD263CC30300D99081 /* dial3Tests.xctest */,
+				900EA0C8263CC30400D99081 /* dial3UITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		900EA0AD263CC30300D99081 /* dial3 */ = {
+			isa = PBXGroup;
+			children = (
+				900EA0AE263CC30300D99081 /* AppDelegate.swift */,
+				900EA0B0263CC30300D99081 /* ViewController.swift */,
+				900EA0B2263CC30300D99081 /* Assets.xcassets */,
+				900EA0B4263CC30300D99081 /* Main.storyboard */,
+				900EA0B7263CC30300D99081 /* Info.plist */,
+				900EA0B8263CC30300D99081 /* dial3.entitlements */,
+				900EA0DA263CC5FF00D99081 /* View1.swift */,
+				900EA0DC263CC85D00D99081 /* WindowController.swift */,
+				900EA0DF263CE57D00D99081 /* Driver.m */,
+				900EA0DE263CE57D00D99081 /* dial3-Bridging-Header.h */,
+				900EA0E1263CE8A200D99081 /* Driver.h */,
+			);
+			path = dial3;
+			sourceTree = "<group>";
+		};
+		900EA0C0263CC30300D99081 /* dial3Tests */ = {
+			isa = PBXGroup;
+			children = (
+				900EA0C1263CC30400D99081 /* dial3Tests.swift */,
+				900EA0C3263CC30400D99081 /* Info.plist */,
+			);
+			path = dial3Tests;
+			sourceTree = "<group>";
+		};
+		900EA0CB263CC30400D99081 /* dial3UITests */ = {
+			isa = PBXGroup;
+			children = (
+				900EA0CC263CC30400D99081 /* dial3UITests.swift */,
+				900EA0CE263CC30400D99081 /* Info.plist */,
+			);
+			path = dial3UITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		900EA0AA263CC30300D99081 /* dial3 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 900EA0D1263CC30400D99081 /* Build configuration list for PBXNativeTarget "dial3" */;
+			buildPhases = (
+				900EA0A7263CC30300D99081 /* Sources */,
+				900EA0A8263CC30300D99081 /* Frameworks */,
+				900EA0A9263CC30300D99081 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = dial3;
+			productName = dial3;
+			productReference = 900EA0AB263CC30300D99081 /* dial3.app */;
+			productType = "com.apple.product-type.application";
+		};
+		900EA0BC263CC30300D99081 /* dial3Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 900EA0D4263CC30400D99081 /* Build configuration list for PBXNativeTarget "dial3Tests" */;
+			buildPhases = (
+				900EA0B9263CC30300D99081 /* Sources */,
+				900EA0BA263CC30300D99081 /* Frameworks */,
+				900EA0BB263CC30300D99081 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				900EA0BF263CC30300D99081 /* PBXTargetDependency */,
+			);
+			name = dial3Tests;
+			productName = dial3Tests;
+			productReference = 900EA0BD263CC30300D99081 /* dial3Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		900EA0C7263CC30400D99081 /* dial3UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 900EA0D7263CC30400D99081 /* Build configuration list for PBXNativeTarget "dial3UITests" */;
+			buildPhases = (
+				900EA0C4263CC30400D99081 /* Sources */,
+				900EA0C5263CC30400D99081 /* Frameworks */,
+				900EA0C6263CC30400D99081 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				900EA0CA263CC30400D99081 /* PBXTargetDependency */,
+			);
+			name = dial3UITests;
+			productName = dial3UITests;
+			productReference = 900EA0C8263CC30400D99081 /* dial3UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		900EA0A3263CC30300D99081 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					900EA0AA263CC30300D99081 = {
+						CreatedOnToolsVersion = 12.5;
+						LastSwiftMigration = 1250;
+					};
+					900EA0BC263CC30300D99081 = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = 900EA0AA263CC30300D99081;
+					};
+					900EA0C7263CC30400D99081 = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = 900EA0AA263CC30300D99081;
+					};
+				};
+			};
+			buildConfigurationList = 900EA0A6263CC30300D99081 /* Build configuration list for PBXProject "dial3" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 900EA0A2263CC30300D99081;
+			productRefGroup = 900EA0AC263CC30300D99081 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				900EA0AA263CC30300D99081 /* dial3 */,
+				900EA0BC263CC30300D99081 /* dial3Tests */,
+				900EA0C7263CC30400D99081 /* dial3UITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		900EA0A9263CC30300D99081 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				900EA0B3263CC30300D99081 /* Assets.xcassets in Resources */,
+				900EA0B6263CC30300D99081 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		900EA0BB263CC30300D99081 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		900EA0C6263CC30400D99081 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		900EA0A7263CC30300D99081 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				900EA0B1263CC30300D99081 /* ViewController.swift in Sources */,
+				900EA0DD263CC85D00D99081 /* WindowController.swift in Sources */,
+				900EA0DB263CC5FF00D99081 /* View1.swift in Sources */,
+				900EA0E0263CE57D00D99081 /* Driver.m in Sources */,
+				900EA0AF263CC30300D99081 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		900EA0B9263CC30300D99081 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				900EA0C2263CC30400D99081 /* dial3Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		900EA0C4263CC30400D99081 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				900EA0CD263CC30400D99081 /* dial3UITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		900EA0BF263CC30300D99081 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 900EA0AA263CC30300D99081 /* dial3 */;
+			targetProxy = 900EA0BE263CC30300D99081 /* PBXContainerItemProxy */;
+		};
+		900EA0CA263CC30400D99081 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 900EA0AA263CC30300D99081 /* dial3 */;
+			targetProxy = 900EA0C9263CC30400D99081 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		900EA0B4263CC30300D99081 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				900EA0B5263CC30300D99081 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		900EA0CF263CC30400D99081 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		900EA0D0263CC30400D99081 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		900EA0D2263CC30400D99081 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = dial3/dial3.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = WA75RZ36C7;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = dial3/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = jp.dip.yamadaserver.dial3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "dial3/dial3-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		900EA0D3263CC30400D99081 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = dial3/dial3.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = WA75RZ36C7;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = dial3/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = jp.dip.yamadaserver.dial3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "dial3/dial3-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		900EA0D5263CC30400D99081 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = WA75RZ36C7;
+				INFOPLIST_FILE = dial3Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.dip.yamadaserver.dial3Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/dial3.app/Contents/MacOS/dial3";
+			};
+			name = Debug;
+		};
+		900EA0D6263CC30400D99081 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = WA75RZ36C7;
+				INFOPLIST_FILE = dial3Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.dip.yamadaserver.dial3Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/dial3.app/Contents/MacOS/dial3";
+			};
+			name = Release;
+		};
+		900EA0D8263CC30400D99081 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = WA75RZ36C7;
+				INFOPLIST_FILE = dial3UITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = jp.dip.yamadaserver.dial3UITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = dial3;
+			};
+			name = Debug;
+		};
+		900EA0D9263CC30400D99081 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = WA75RZ36C7;
+				INFOPLIST_FILE = dial3UITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = jp.dip.yamadaserver.dial3UITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = dial3;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		900EA0A6263CC30300D99081 /* Build configuration list for PBXProject "dial3" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				900EA0CF263CC30400D99081 /* Debug */,
+				900EA0D0263CC30400D99081 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		900EA0D1263CC30400D99081 /* Build configuration list for PBXNativeTarget "dial3" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				900EA0D2263CC30400D99081 /* Debug */,
+				900EA0D3263CC30400D99081 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		900EA0D4263CC30400D99081 /* Build configuration list for PBXNativeTarget "dial3Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				900EA0D5263CC30400D99081 /* Debug */,
+				900EA0D6263CC30400D99081 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		900EA0D7263CC30400D99081 /* Build configuration list for PBXNativeTarget "dial3UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				900EA0D8263CC30400D99081 /* Debug */,
+				900EA0D9263CC30400D99081 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 900EA0A3263CC30300D99081 /* Project object */;
+}

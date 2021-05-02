@@ -1,4 +1,5 @@
 # dial3
+<img src="images/dial2_icon_64.png">
 
 ## `dial3` is a Human Interface Device Controller for macos.
 
@@ -18,4 +19,3 @@ NSDictionary* criteria = @{
     @kIOHIDProductIDKey: @(0x5678),
 };
 ```
-
