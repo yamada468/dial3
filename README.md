@@ -19,3 +19,13 @@ NSDictionary* criteria = @{
     @kIOHIDProductIDKey: @(0x5678),
 };
 ```
+
+---
+
+```
+The user interface is Japanese. English is long sideways, so the layout is broken. Do you have a good idea?
+```
+
+```
+ユーザーインターフェイスは日本語です。英語は横に長いのでレイアウトが崩れます。良いアイディアはありますか？
+```
