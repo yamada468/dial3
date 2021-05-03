@@ -26,6 +26,7 @@ class WindowController: NSWindowController {
         super.windowDidLoad()
     
         // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
+        window?.level = .floating
         window?.isOpaque = false
         window?.backgroundColor = NSColor(white: 1, alpha: 0)
 
