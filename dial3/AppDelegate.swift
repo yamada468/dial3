@@ -29,9 +29,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         winctrl?.showWindow(self)
     }
 
-    func sync_showWindow() {
-        DispatchQueue.main.sync {
-            showWindow()
+    func async_showWindow() {
+        DispatchQueue.main.async {
+            self.showWindow()
         }
     }
 
@@ -39,9 +39,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         winctrl?.close()
     }
 
-    func sync_closeWindow() {
-        DispatchQueue.main.sync {
-            closeWindow()
+    func async_closeWindow() {
+        DispatchQueue.main.async {
+            self.closeWindow()
         }
     }
 
@@ -58,11 +58,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
 
-    func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
-        let storyboard = NSStoryboard(name: "Main",bundle: nil)
-        winctrl = storyboard.instantiateController(withIdentifier: "WindowController") as? WindowController
-
+    func applicationWillFinishLaunching(_ notification: Notification) {
         driver = Driver.init()
         if (false == driver?.initHid(self)) {
             let alert: NSAlert = NSAlert()
@@ -75,6 +71,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         } else {
             driver?.runHid()
         }
+    }
+    
+    func applicationDidFinishLaunching(_ aNotification: Notification) {
+        // Insert code here to initialize your application
+        let storyboard = NSStoryboard(name: "Main",bundle: nil)
+        winctrl = storyboard.instantiateController(withIdentifier: "WindowController") as? WindowController
 
         let image: NSImage = NSImage(named: "dial")!
         image.size.width = 24

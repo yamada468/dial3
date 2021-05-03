@@ -34,7 +34,7 @@ int kando_cnt = 0;
     CFRunLoopRun();
 
 //    // デモ
-//    [instance sync_showWindow];
+//    [instance async_showWindow];
 //    while (1) {
 //        [NSThread sleepForTimeInterval:2.0];
 //        _right();
@@ -79,12 +79,15 @@ void _cleanUpHid() {
 -(BOOL) initHid:(AppDelegate *) _instance {
     instance = _instance;
     _cleanUpHid();
+
     manager = IOHIDManagerCreate(kCFAllocatorDefault, kIOHIDManagerOptionNone);
     NSDictionary* criteria = @{
         @kIOHIDDeviceUsagePageKey: @(kHIDPage_GenericDesktop),
         @kIOHIDDeviceUsageKey: @(kHIDUsage_GD_SystemMultiAxisController),
-        @kIOHIDVendorIDKey: @(0x1234),
-        @kIOHIDProductIDKey: @(0x5678),
+//        @kIOHIDVendorIDKey: @(0x1234),
+//        @kIOHIDProductIDKey: @(0x5678),
+        @kIOHIDVendorIDKey: @(0x2341),
+        @kIOHIDProductIDKey: @(0x8036),
     };
 
     IOHIDManagerSetDeviceMatching(manager, (__bridge CFDictionaryRef)criteria);
@@ -103,7 +106,6 @@ void _cleanUpHid() {
 }
 
 void _handleInput(void *context, IOReturn result, void *sender, IOHIDValueRef valueRef) {
-    NSLog(@"Run at");
     if (result != kIOReturnSuccess) {
         return;
     }
@@ -116,12 +118,14 @@ void _handleInput(void *context, IOReturn result, void *sender, IOHIDValueRef va
         NSLog(@"Click event, usage : 0x%x, value : %ld", usage, value);
         kando_cnt = 0;
         
-        if (choice == CHOICE_OFF) {
-            choice = CHOICE_ON;
-            [instance sync_showWindow];
-        } else { // CHOICE_ON
-            choice = CHOICE_OFF;
-            [instance sync_closeWindow];
+        if (1 == value) {
+            if (choice == CHOICE_OFF) {
+                choice = CHOICE_ON;
+                [instance async_showWindow];
+            } else { // CHOICE_ON
+                choice = CHOICE_OFF;
+                [instance async_closeWindow];
+            }
         }
     } else {
         NSLog(@"Dial event, usage : 0x%x, value : %ld, kando : %d", usage, value, kando_cnt);
@@ -136,7 +140,7 @@ void _handleInput(void *context, IOReturn result, void *sender, IOHIDValueRef va
 
 void _changeMode(uint32_t usage, long value) {
     if (usage == kHIDUsage_GD_Dial) {
-        int kando = KANDO_SCROLL; //KANDO_ZOOM
+        int kando = KANDO_ZOOM; // KANDO_SCROLL
 
         if (kando_cnt >= kando) {
             kando_cnt = 0;
