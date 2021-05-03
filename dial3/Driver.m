@@ -84,10 +84,10 @@ void _cleanUpHid() {
     NSDictionary* criteria = @{
         @kIOHIDDeviceUsagePageKey: @(kHIDPage_GenericDesktop),
         @kIOHIDDeviceUsageKey: @(kHIDUsage_GD_SystemMultiAxisController),
-//        @kIOHIDVendorIDKey: @(0x1234),
-//        @kIOHIDProductIDKey: @(0x5678),
-        @kIOHIDVendorIDKey: @(0x2341),
-        @kIOHIDProductIDKey: @(0x8036),
+        @kIOHIDVendorIDKey: @(0x1234),
+        @kIOHIDProductIDKey: @(0x5678),
+//        @kIOHIDVendorIDKey: @(0x2341),  // Arduino
+//        @kIOHIDProductIDKey: @(0x8036), // Leonard
     };
 
     IOHIDManagerSetDeviceMatching(manager, (__bridge CFDictionaryRef)criteria);
