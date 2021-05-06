@@ -169,49 +169,67 @@ void _changeSignal(uint32_t usage, long value) {
             
             NSMutableArray *events = [NSMutableArray array];
             CGEventSourceRef src = CGEventSourceCreate(kCGEventSourceStateHIDSystemState);
-            CGEventRef eventRef = NULL;
-
+            
             if (MODE_VERTICAL == mode) {
                 if (0 > value) {
-                    eventRef = CGEventCreateScrollWheelEvent(src, kCGScrollEventUnitPixel, 1, -1 * SCROLL_PX, 0);
+                    CGEventRef eventRef = CGEventCreateScrollWheelEvent(src, kCGScrollEventUnitPixel, 1, -1 * SCROLL_PX, 0);
+                    [events addObject:[NSValue valueWithPointer:eventRef]];
                 } else if (0 < value) {
-                    eventRef = CGEventCreateScrollWheelEvent(src, kCGScrollEventUnitPixel, 1, SCROLL_PX, 0);
+                    CGEventRef eventRef = CGEventCreateScrollWheelEvent(src, kCGScrollEventUnitPixel, 1, SCROLL_PX, 0);
+                    [events addObject:[NSValue valueWithPointer:eventRef]];
                 }
             } else if (MODE_HORIZONAL == mode) {
                 if (0 > value) {
-                    eventRef = CGEventCreateScrollWheelEvent(src, kCGScrollEventUnitPixel, 2, 0, -1 * SCROLL_PX);
+                    CGEventRef eventRef = CGEventCreateScrollWheelEvent(src, kCGScrollEventUnitPixel, 2, 0, -1 * SCROLL_PX);
+                    [events addObject:[NSValue valueWithPointer:eventRef]];
                 } else if (0 < value) {
-                    eventRef = CGEventCreateScrollWheelEvent(src, kCGScrollEventUnitPixel, 2, 0, SCROLL_PX);
+                    CGEventRef eventRef = CGEventCreateScrollWheelEvent(src, kCGScrollEventUnitPixel, 2, 0, SCROLL_PX);
+                    [events addObject:[NSValue valueWithPointer:eventRef]];
                 }
             } else if (MODE_ZOOM == mode) {
                 if (0 > value) {
-                    eventRef = CGEventCreateKeyboardEvent(NULL, kVK_ANSI_KeypadPlus, true);
+                    CGEventRef eventRef = CGEventCreateKeyboardEvent(NULL, kVK_ANSI_KeypadPlus, true);
+                    CGEventSetFlags(eventRef, kCGEventFlagMaskCommand);
+                    [events addObject:[NSValue valueWithPointer:eventRef]];
                 } else if (0 < value) {
-                    eventRef = CGEventCreateKeyboardEvent(NULL, kVK_ANSI_Minus, true);
+                    CGEventRef eventRef = CGEventCreateKeyboardEvent(NULL, kVK_ANSI_Minus, true);
+                    CGEventSetFlags(eventRef, kCGEventFlagMaskCommand);
+                    [events addObject:[NSValue valueWithPointer:eventRef]];
                 }
-                CGEventSetFlags(eventRef, kCGEventFlagMaskCommand);
             } else if (MODE_VOLUME == mode) {
                 if (0 > value) {
-                    eventRef = CGEventCreateKeyboardEvent(NULL, kVK_VolumeUp, true);
+                    CGEventRef eventRef1 = CGEventCreateKeyboardEvent(src, kVK_VolumeUp, true);
+                    [events addObject:[NSValue valueWithPointer:eventRef1]];
+
+                    CGEventRef eventRef2 = CGEventCreateKeyboardEvent(src, kVK_VolumeUp, false);
+                    [events addObject:[NSValue valueWithPointer:eventRef2]];
                 } else if (0 < value) {
-                    eventRef = CGEventCreateKeyboardEvent(NULL, kVK_VolumeDown, true);
+                    CGEventRef eventRef1 = CGEventCreateKeyboardEvent(src, kVK_VolumeDown, true);
+                    [events addObject:[NSValue valueWithPointer:eventRef1]];
+
+                    CGEventRef eventRef2 = CGEventCreateKeyboardEvent(src, kVK_VolumeDown, false);
+                    [events addObject:[NSValue valueWithPointer:eventRef2]];
                 }
             } else if (MODE_BRITE == mode) {
                 if (0 > value) {
-                    eventRef = CGEventCreateKeyboardEvent(NULL, kVK_F15, true);
+                    CGEventRef eventRef1 = CGEventCreateKeyboardEvent(NULL, kVK_F15, true);
+                    [events addObject:[NSValue valueWithPointer:eventRef1]];
+
+                    CGEventRef eventRef2 = CGEventCreateKeyboardEvent(NULL, kVK_F15, false);
+                    [events addObject:[NSValue valueWithPointer:eventRef2]];
                 } else if (0 < value) {
-                    eventRef = CGEventCreateKeyboardEvent(NULL, kVK_F14, true);
+                    CGEventRef eventRef1 = CGEventCreateKeyboardEvent(NULL, kVK_F14, true);
+                    [events addObject:[NSValue valueWithPointer:eventRef1]];
+
+                    CGEventRef eventRef2 = CGEventCreateKeyboardEvent(NULL, kVK_F14, false);
+                    [events addObject:[NSValue valueWithPointer:eventRef2]];
                 }
             }
             
-            if (NULL != eventRef) {
-                [events addObject:[NSValue valueWithPointer:eventRef]];
-
-                for (NSValue *event in events) {
-                    CGEventRef eventRef = (CGEventRef)[event pointerValue];
-                    CGEventPost(kCGHIDEventTap, eventRef);
-                    CFRelease(eventRef);
-                }
+            for (NSValue *event in events) {
+                CGEventRef eventRef = (CGEventRef)[event pointerValue];
+                CGEventPost(kCGHIDEventTap, eventRef);
+                CFRelease(eventRef);
             }
         } else {
             kando_cnt++;
