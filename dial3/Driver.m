@@ -121,7 +121,15 @@ void _handleInput(void *context, IOReturn result, void *sender, IOHIDValueRef va
         if (1 == value) {
             if (choice == CHOICE_OFF) {
                 choice = CHOICE_ON;
+                
+                if (mode == MODE_VERTICAL) {
+                    mode = MODE_HORIZONAL;
+                } else {
+                    mode = MODE_VERTICAL;
+                }
+                
                 [instance async_showWindow];
+                [instance async_setFuncWithF:mode];
             } else { // CHOICE_ON
                 choice = CHOICE_OFF;
                 [instance async_closeWindow];
