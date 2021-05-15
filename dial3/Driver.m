@@ -193,8 +193,8 @@ void _handleInput(void *context, IOReturn result, void *sender, IOHIDValueRef va
                         io_service_t service = CGDisplayIOServicePort(displayID);
                         float brightness = .0;
                         IODisplayGetFloatParameter(service, kNilOptions, kDisplayBrightness, &brightness);
-                        brightness = round(brightness*10)/10;
-                        NSString *s = [NSString stringWithFormat:@"%1.1f", brightness];
+                        brightness = round(brightness*100)/100;
+                        NSString *s = [NSString stringWithFormat:@"%1.2f", brightness];
                         NSLog(@"volume : %@", s);
                         [instance async_setValueWithS:s];
                     }
@@ -305,7 +305,7 @@ void _changeSignal(uint32_t usage, long value) {
                     io_service_t service = CGDisplayIOServicePort(displayID);
                     float brightness = .0;
                     IODisplayGetFloatParameter(service, kNilOptions, kDisplayBrightness, &brightness);
-                    brightness = round(brightness*10)/10;
+                    brightness = round(brightness*100)/100;
 
                     if (0 > value) {
                         brightness += BRIGHT_STEP;
@@ -318,7 +318,7 @@ void _changeSignal(uint32_t usage, long value) {
                         brightness = BRIGHT_MIN;
                     }
 
-                    NSString *s = [NSString stringWithFormat:@"%1.1f", brightness];
+                    NSString *s = [NSString stringWithFormat:@"%1.2f", brightness];
                     NSLog(@"brightness : %@", s);
                     [instance async_setValueWithS:s];
 
