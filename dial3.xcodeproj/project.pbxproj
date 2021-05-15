@@ -11,29 +11,10 @@
 		900EA0B1263CC30300D99081 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900EA0B0263CC30300D99081 /* ViewController.swift */; };
 		900EA0B3263CC30300D99081 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 900EA0B2263CC30300D99081 /* Assets.xcassets */; };
 		900EA0B6263CC30300D99081 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 900EA0B4263CC30300D99081 /* Main.storyboard */; };
-		900EA0C2263CC30400D99081 /* dial3Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900EA0C1263CC30400D99081 /* dial3Tests.swift */; };
-		900EA0CD263CC30400D99081 /* dial3UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900EA0CC263CC30400D99081 /* dial3UITests.swift */; };
 		900EA0DB263CC5FF00D99081 /* View1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900EA0DA263CC5FF00D99081 /* View1.swift */; };
 		900EA0DD263CC85D00D99081 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900EA0DC263CC85D00D99081 /* WindowController.swift */; };
 		900EA0E0263CE57D00D99081 /* Driver.m in Sources */ = {isa = PBXBuildFile; fileRef = 900EA0DF263CE57D00D99081 /* Driver.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		900EA0BE263CC30300D99081 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 900EA0A3263CC30300D99081 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 900EA0AA263CC30300D99081;
-			remoteInfo = dial3;
-		};
-		900EA0C9263CC30400D99081 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 900EA0A3263CC30300D99081 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 900EA0AA263CC30300D99081;
-			remoteInfo = dial3;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		900EA0AB263CC30300D99081 /* dial3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dial3.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,12 +24,6 @@
 		900EA0B5263CC30300D99081 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		900EA0B7263CC30300D99081 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		900EA0B8263CC30300D99081 /* dial3.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = dial3.entitlements; sourceTree = "<group>"; };
-		900EA0BD263CC30300D99081 /* dial3Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = dial3Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		900EA0C1263CC30400D99081 /* dial3Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dial3Tests.swift; sourceTree = "<group>"; };
-		900EA0C3263CC30400D99081 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		900EA0C8263CC30400D99081 /* dial3UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = dial3UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		900EA0CC263CC30400D99081 /* dial3UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dial3UITests.swift; sourceTree = "<group>"; };
-		900EA0CE263CC30400D99081 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		900EA0DA263CC5FF00D99081 /* View1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View1.swift; sourceTree = "<group>"; };
 		900EA0DC263CC85D00D99081 /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
 		900EA0DE263CE57D00D99081 /* dial3-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "dial3-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -64,20 +39,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		900EA0BA263CC30300D99081 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		900EA0C5263CC30400D99081 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -85,8 +46,6 @@
 			isa = PBXGroup;
 			children = (
 				900EA0AD263CC30300D99081 /* dial3 */,
-				900EA0C0263CC30300D99081 /* dial3Tests */,
-				900EA0CB263CC30400D99081 /* dial3UITests */,
 				900EA0AC263CC30300D99081 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -95,8 +54,6 @@
 			isa = PBXGroup;
 			children = (
 				900EA0AB263CC30300D99081 /* dial3.app */,
-				900EA0BD263CC30300D99081 /* dial3Tests.xctest */,
-				900EA0C8263CC30400D99081 /* dial3UITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -119,24 +76,6 @@
 			path = dial3;
 			sourceTree = "<group>";
 		};
-		900EA0C0263CC30300D99081 /* dial3Tests */ = {
-			isa = PBXGroup;
-			children = (
-				900EA0C1263CC30400D99081 /* dial3Tests.swift */,
-				900EA0C3263CC30400D99081 /* Info.plist */,
-			);
-			path = dial3Tests;
-			sourceTree = "<group>";
-		};
-		900EA0CB263CC30400D99081 /* dial3UITests */ = {
-			isa = PBXGroup;
-			children = (
-				900EA0CC263CC30400D99081 /* dial3UITests.swift */,
-				900EA0CE263CC30400D99081 /* Info.plist */,
-			);
-			path = dial3UITests;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -157,42 +96,6 @@
 			productReference = 900EA0AB263CC30300D99081 /* dial3.app */;
 			productType = "com.apple.product-type.application";
 		};
-		900EA0BC263CC30300D99081 /* dial3Tests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 900EA0D4263CC30400D99081 /* Build configuration list for PBXNativeTarget "dial3Tests" */;
-			buildPhases = (
-				900EA0B9263CC30300D99081 /* Sources */,
-				900EA0BA263CC30300D99081 /* Frameworks */,
-				900EA0BB263CC30300D99081 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				900EA0BF263CC30300D99081 /* PBXTargetDependency */,
-			);
-			name = dial3Tests;
-			productName = dial3Tests;
-			productReference = 900EA0BD263CC30300D99081 /* dial3Tests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		900EA0C7263CC30400D99081 /* dial3UITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 900EA0D7263CC30400D99081 /* Build configuration list for PBXNativeTarget "dial3UITests" */;
-			buildPhases = (
-				900EA0C4263CC30400D99081 /* Sources */,
-				900EA0C5263CC30400D99081 /* Frameworks */,
-				900EA0C6263CC30400D99081 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				900EA0CA263CC30400D99081 /* PBXTargetDependency */,
-			);
-			name = dial3UITests;
-			productName = dial3UITests;
-			productReference = 900EA0C8263CC30400D99081 /* dial3UITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -205,14 +108,6 @@
 					900EA0AA263CC30300D99081 = {
 						CreatedOnToolsVersion = 12.5;
 						LastSwiftMigration = 1250;
-					};
-					900EA0BC263CC30300D99081 = {
-						CreatedOnToolsVersion = 12.5;
-						TestTargetID = 900EA0AA263CC30300D99081;
-					};
-					900EA0C7263CC30400D99081 = {
-						CreatedOnToolsVersion = 12.5;
-						TestTargetID = 900EA0AA263CC30300D99081;
 					};
 				};
 			};
@@ -230,8 +125,6 @@
 			projectRoot = "";
 			targets = (
 				900EA0AA263CC30300D99081 /* dial3 */,
-				900EA0BC263CC30300D99081 /* dial3Tests */,
-				900EA0C7263CC30400D99081 /* dial3UITests */,
 			);
 		};
 /* End PBXProject section */
@@ -243,20 +136,6 @@
 			files = (
 				900EA0B3263CC30300D99081 /* Assets.xcassets in Resources */,
 				900EA0B6263CC30300D99081 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		900EA0BB263CC30300D99081 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		900EA0C6263CC30400D99081 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,36 +154,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		900EA0B9263CC30300D99081 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				900EA0C2263CC30400D99081 /* dial3Tests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		900EA0C4263CC30400D99081 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				900EA0CD263CC30400D99081 /* dial3UITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		900EA0BF263CC30300D99081 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 900EA0AA263CC30300D99081 /* dial3 */;
-			targetProxy = 900EA0BE263CC30300D99081 /* PBXContainerItemProxy */;
-		};
-		900EA0CA263CC30400D99081 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 900EA0AA263CC30300D99081 /* dial3 */;
-			targetProxy = 900EA0C9263CC30400D99081 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		900EA0B4263CC30300D99081 /* Main.storyboard */ = {
@@ -484,90 +334,6 @@
 			};
 			name = Release;
 		};
-		900EA0D5263CC30400D99081 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = WA75RZ36C7;
-				INFOPLIST_FILE = dial3Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 11.3;
-				PRODUCT_BUNDLE_IDENTIFIER = jp.dip.yamadaserver.dial3Tests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/dial3.app/Contents/MacOS/dial3";
-			};
-			name = Debug;
-		};
-		900EA0D6263CC30400D99081 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = WA75RZ36C7;
-				INFOPLIST_FILE = dial3Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 11.3;
-				PRODUCT_BUNDLE_IDENTIFIER = jp.dip.yamadaserver.dial3Tests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/dial3.app/Contents/MacOS/dial3";
-			};
-			name = Release;
-		};
-		900EA0D8263CC30400D99081 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = WA75RZ36C7;
-				INFOPLIST_FILE = dial3UITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = jp.dip.yamadaserver.dial3UITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = dial3;
-			};
-			name = Debug;
-		};
-		900EA0D9263CC30400D99081 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = WA75RZ36C7;
-				INFOPLIST_FILE = dial3UITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = jp.dip.yamadaserver.dial3UITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = dial3;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -585,24 +351,6 @@
 			buildConfigurations = (
 				900EA0D2263CC30400D99081 /* Debug */,
 				900EA0D3263CC30400D99081 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		900EA0D4263CC30400D99081 /* Build configuration list for PBXNativeTarget "dial3Tests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				900EA0D5263CC30400D99081 /* Debug */,
-				900EA0D6263CC30400D99081 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		900EA0D7263CC30400D99081 /* Build configuration list for PBXNativeTarget "dial3UITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				900EA0D8263CC30400D99081 /* Debug */,
-				900EA0D9263CC30400D99081 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
