@@ -17,6 +17,8 @@ AppDelegate *instance;
 
 AudioObjectPropertyAddress audioaddr;
 AudioDeviceID outputAudioDeviceID = 0U;
+CGDirectDisplayID displayID = 0U;
+
 
 int choice = CHOICE_OFF;
 int mode = MODE_VERTICAL;
@@ -114,8 +116,8 @@ void _cleanUpHid() {
     audioaddr.mElement = kAudioObjectPropertyElementMaster;
     
     UInt32 size = sizeof(AudioDeviceID);
-    OSStatus err = AudioObjectGetPropertyData(kAudioObjectSystemObject, &audioaddr, 0, NULL, &size, &outputAudioDeviceID);
-    if (err == noErr) {
+    OSStatus err0 = AudioObjectGetPropertyData(kAudioObjectSystemObject, &audioaddr, 0, NULL, &size, &outputAudioDeviceID);
+    if (err0 == noErr) {
         NSLog(@"AudioDeviceID : %d", outputAudioDeviceID);
         
         audioaddr.mSelector = kAudioHardwareServiceDeviceProperty_VirtualMasterVolume;
@@ -125,6 +127,22 @@ void _cleanUpHid() {
         AudioObjectGetPropertyData(outputAudioDeviceID, &audioaddr, 0, NULL, &size, &volume);
 
         NSLog(@"current volume : %lf", volume);
+    }
+    
+    CGDisplayCount numDisplays;
+    CGDirectDisplayID displaies[kMaxDisplays];
+    CGDisplayErr err1 = CGGetActiveDisplayList(kMaxDisplays, displaies, &numDisplays);
+    if (err1 == CGDisplayNoErr) {
+        displayID = displaies[0];
+        NSLog(@"DisplayID : %d (%d)", displayID, numDisplays);
+        
+        io_service_t service = CGDisplayIOServicePort(displayID);
+        float brightness = .0;
+        err1 = IODisplayGetFloatParameter(service, kNilOptions, kDisplayBrightness, &brightness);
+        
+        if (err1 == kIOReturnSuccess) {
+            NSLog(@"current brightness : %1f", brightness);
+        }
     }
     
     return TRUE;
@@ -164,7 +182,19 @@ void _handleInput(void *context, IOReturn result, void *sender, IOHIDValueRef va
                         Float32 volume;
                         AudioObjectGetPropertyData(outputAudioDeviceID, &audioaddr, 0, NULL, &size, &volume);
                         volume = round(volume*100)/100;
-                        NSString *s = [NSString stringWithFormat:@"%1.3f", volume];
+                        NSString *s = [NSString stringWithFormat:@"%1.2f", volume];
+                        NSLog(@"volume : %@", s);
+                        [instance async_setValueWithS:s];
+                    }
+                } else if (mode == MODE_BRITE) {
+                    choice = CHOICE_SET;
+                    
+                    if (0 != displayID) {
+                        io_service_t service = CGDisplayIOServicePort(displayID);
+                        float brightness = .0;
+                        IODisplayGetFloatParameter(service, kNilOptions, kDisplayBrightness, &brightness);
+                        brightness = round(brightness*10)/10;
+                        NSString *s = [NSString stringWithFormat:@"%1.1f", brightness];
                         NSLog(@"volume : %@", s);
                         [instance async_setValueWithS:s];
                     }
@@ -253,6 +283,7 @@ void _changeSignal(uint32_t usage, long value) {
                     UInt32 size = sizeof(AudioDeviceID);
                     Float32 volume;
                     AudioObjectGetPropertyData(outputAudioDeviceID, &audioaddr, 0, NULL, &size, &volume);
+                    volume = round(volume*100)/100;
                     if (0 > value) {
                         volume += VOLUME_STEP;
                     } else if (0 < value) {
@@ -263,26 +294,35 @@ void _changeSignal(uint32_t usage, long value) {
                     } else if (volume < VOLUME_MIN) {
                         volume = VOLUME_MIN;
                     }
-                    volume = round(volume*100)/100;
-                    NSString *s = [NSString stringWithFormat:@"%1.3f", volume];
+                    NSString *s = [NSString stringWithFormat:@"%1.2f", volume];
                     NSLog(@"volume : %@", s);
                     [instance async_setValueWithS:s];
                     size = sizeof(Float32);
                     AudioObjectSetPropertyData(outputAudioDeviceID, &audioaddr, 0, NULL, size, &volume);
                 }
             } else if (MODE_BRITE == mode) {
-                if (0 > value) {
-                    CGEventRef eventRef1 = CGEventCreateKeyboardEvent(NULL, kVK_F15, true);
-                    [events addObject:[NSValue valueWithPointer:eventRef1]];
+                if (0 != displayID) {
+                    io_service_t service = CGDisplayIOServicePort(displayID);
+                    float brightness = .0;
+                    IODisplayGetFloatParameter(service, kNilOptions, kDisplayBrightness, &brightness);
+                    brightness = round(brightness*10)/10;
 
-                    CGEventRef eventRef2 = CGEventCreateKeyboardEvent(NULL, kVK_F15, false);
-                    [events addObject:[NSValue valueWithPointer:eventRef2]];
-                } else if (0 < value) {
-                    CGEventRef eventRef1 = CGEventCreateKeyboardEvent(NULL, kVK_F14, true);
-                    [events addObject:[NSValue valueWithPointer:eventRef1]];
+                    if (0 > value) {
+                        brightness += BRIGHT_STEP;
+                    } else if (0 < value) {
+                        brightness -= BRIGHT_STEP;
+                    }
+                    if (brightness > BRIGHT_MAX) {
+                        brightness = BRIGHT_MAX;
+                    } else if (brightness < BRIGHT_MIN) {
+                        brightness = BRIGHT_MIN;
+                    }
 
-                    CGEventRef eventRef2 = CGEventCreateKeyboardEvent(NULL, kVK_F14, false);
-                    [events addObject:[NSValue valueWithPointer:eventRef2]];
+                    NSString *s = [NSString stringWithFormat:@"%1.1f", brightness];
+                    NSLog(@"brightness : %@", s);
+                    [instance async_setValueWithS:s];
+
+                    IODisplaySetFloatParameter(service, kNilOptions, kDisplayBrightness, brightness);
                 }
             }
             

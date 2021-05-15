@@ -93,7 +93,7 @@ class View1: NSView {
         
         label1.stringValue = funcNames[currentFunc]
         
-        if (4 == currentFunc) {
+        if ((4 == currentFunc) || (6 == currentFunc)) {
             label2.stringValue = value
         } else {
             label2.stringValue = ""

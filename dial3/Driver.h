@@ -32,6 +32,13 @@
 #define VOLUME_MAX     0.5
 #define VOLUME_MIN     0.0
 
+const int kMaxDisplays = 16;
+const CFStringRef kDisplayBrightness = CFSTR(kIODisplayBrightnessKey);
+#define BRIGHT_STEP    0.1
+#define BRIGHT_MAX     1.0
+#define BRIGHT_MIN     0.0
+
+
 @class AppDelegate;
 
 @interface Driver : NSObject
