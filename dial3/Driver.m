@@ -7,11 +7,16 @@
 
 #import "Driver.h"
 #import "dial3-Swift.h"
+#import <CoreAudio/CoreAudio.h>
+#import <AudioToolbox/AudioToolbox.h>
 
 @implementation Driver
 
 IOHIDManagerRef manager;
 AppDelegate *instance;
+
+AudioObjectPropertyAddress audioaddr;
+AudioDeviceID outputAudioDeviceID = 0U;
 
 int choice = CHOICE_OFF;
 int mode = MODE_VERTICAL;
@@ -102,6 +107,26 @@ void _cleanUpHid() {
 
     //IOHIDManagerRegisterInputValueCallback(manager, &_handleInput, NULL);
     NSLog(@"HID init successfly");
+
+    
+    audioaddr.mSelector = kAudioHardwarePropertyDefaultOutputDevice;
+    audioaddr.mScope = kAudioObjectPropertyScopeGlobal;
+    audioaddr.mElement = kAudioObjectPropertyElementMaster;
+    
+    UInt32 size = sizeof(AudioDeviceID);
+    OSStatus err = AudioObjectGetPropertyData(kAudioObjectSystemObject, &audioaddr, 0, NULL, &size, &outputAudioDeviceID);
+    if (err == noErr) {
+        NSLog(@"AudioDeviceID : %d", outputAudioDeviceID);
+        
+        audioaddr.mSelector = kAudioHardwareServiceDeviceProperty_VirtualMasterVolume;
+        audioaddr.mScope = kAudioObjectPropertyScopeOutput;
+        audioaddr.mElement = kAudioObjectPropertyElementMaster;
+        Float32 volume;
+        AudioObjectGetPropertyData(outputAudioDeviceID, &audioaddr, 0, NULL, &size, &volume);
+
+        NSLog(@"current volume : %lf", volume);
+    }
+    
     return TRUE;
 }
 
@@ -130,18 +155,37 @@ void _handleInput(void *context, IOReturn result, void *sender, IOHIDValueRef va
                 
                 [instance async_showWindow];
                 [instance async_setFuncWithF:mode];
-            } else { // CHOICE_ON
+            } else if (choice == CHOICE_ON) {
+                if (mode == MODE_VOLUME) {
+                    choice = CHOICE_SET;
+                    
+                    if (0 != outputAudioDeviceID) {
+                        UInt32 size = sizeof(AudioDeviceID);
+                        Float32 volume;
+                        AudioObjectGetPropertyData(outputAudioDeviceID, &audioaddr, 0, NULL, &size, &volume);
+                        volume = round(volume*100)/100;
+                        NSString *s = [NSString stringWithFormat:@"%1.3f", volume];
+                        NSLog(@"volume : %@", s);
+                        [instance async_setValueWithS:s];
+                    }
+                } else {
+                    choice = CHOICE_OFF;
+                    [instance async_closeWindow];
+                }
+            } else if (choice == CHOICE_SET) {
                 choice = CHOICE_OFF;
+                mode = MODE_VERTICAL;
+                [instance async_setValueWithS:@""];
                 [instance async_closeWindow];
             }
         }
     } else {
         NSLog(@"Dial event, usage : 0x%x, value : %ld, kando : %d", usage, value, kando_cnt);
         
-        if (choice == CHOICE_OFF) {
-            _changeSignal(usage, value);
-        } else { // CHOICE_ON
+        if (choice == CHOICE_ON) {
             _changeMode(usage, value);
+        } else { // CHOICE_OFF or CHOICE_SET
+            _changeSignal(usage, value);
         }
     }
 }
@@ -205,18 +249,26 @@ void _changeSignal(uint32_t usage, long value) {
                     [events addObject:[NSValue valueWithPointer:eventRef]];
                 }
             } else if (MODE_VOLUME == mode) {
-                if (0 > value) {
-                    CGEventRef eventRef1 = CGEventCreateKeyboardEvent(src, kVK_VolumeUp, true);
-                    [events addObject:[NSValue valueWithPointer:eventRef1]];
-
-                    CGEventRef eventRef2 = CGEventCreateKeyboardEvent(src, kVK_VolumeUp, false);
-                    [events addObject:[NSValue valueWithPointer:eventRef2]];
-                } else if (0 < value) {
-                    CGEventRef eventRef1 = CGEventCreateKeyboardEvent(src, kVK_VolumeDown, true);
-                    [events addObject:[NSValue valueWithPointer:eventRef1]];
-
-                    CGEventRef eventRef2 = CGEventCreateKeyboardEvent(src, kVK_VolumeDown, false);
-                    [events addObject:[NSValue valueWithPointer:eventRef2]];
+                if (0 != outputAudioDeviceID) {
+                    UInt32 size = sizeof(AudioDeviceID);
+                    Float32 volume;
+                    AudioObjectGetPropertyData(outputAudioDeviceID, &audioaddr, 0, NULL, &size, &volume);
+                    if (0 > value) {
+                        volume += VOLUME_STEP;
+                    } else if (0 < value) {
+                        volume -= VOLUME_STEP;
+                    }
+                    if (volume > VOLUME_MAX) {
+                        volume = VOLUME_MAX;
+                    } else if (volume < VOLUME_MIN) {
+                        volume = VOLUME_MIN;
+                    }
+                    volume = round(volume*100)/100;
+                    NSString *s = [NSString stringWithFormat:@"%1.3f", volume];
+                    NSLog(@"volume : %@", s);
+                    [instance async_setValueWithS:s];
+                    size = sizeof(Float32);
+                    AudioObjectSetPropertyData(outputAudioDeviceID, &audioaddr, 0, NULL, size, &volume);
                 }
             } else if (MODE_BRITE == mode) {
                 if (0 > value) {

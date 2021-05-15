@@ -57,6 +57,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             self.setFunc(f: f)
         }
     }
+    
+    func setValue(s: String) {
+        if let viewcont = self.winctrl.contentViewController as? ViewController {
+            viewcont.setValue(s: s)
+        }
+    }
+    
+    func async_setValue(s: String) {
+        DispatchQueue.main.async {
+            self.setValue(s: s)
+        }
+    }
 
     func applicationWillFinishLaunching(_ notification: Notification) {
         driver = Driver.init()

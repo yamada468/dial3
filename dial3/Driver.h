@@ -14,6 +14,7 @@
 
 #define CHOICE_OFF     0
 #define CHOICE_ON      1
+#define CHOICE_SET     2
 
 #define MODE_VERTICAL  0
 #define MODE_HORIZONAL 1
@@ -24,9 +25,12 @@
 #define MODE_BRITE     6
 #define MODE_7         7
 
-#define KANDO_ZOOM 7
-#define KANDO_SCROLL 3
-#define SCROLL_PX 150
+#define KANDO_ZOOM     7
+#define KANDO_SCROLL   3
+#define SCROLL_PX      150
+#define VOLUME_STEP    0.01
+#define VOLUME_MAX     0.5
+#define VOLUME_MIN     0.0
 
 @class AppDelegate;
 

@@ -9,6 +9,7 @@ import Cocoa
 
 class View1: NSView {
     @IBOutlet weak var label1: NSTextField!
+    @IBOutlet weak var label2: NSTextField!
     
     public let unitDeg: Float = 45.0
     public var currentFunc: Int = 0
@@ -21,6 +22,14 @@ class View1: NSView {
             }
             
             if oldValue != currentFunc {
+                setNeedsDisplay(bounds)
+            }
+        }
+    }
+    public var value: String = ""
+    {
+        didSet {
+            if oldValue != value {
                 setNeedsDisplay(bounds)
             }
         }
@@ -83,6 +92,12 @@ class View1: NSView {
         context?.cgContext.strokePath()
         
         label1.stringValue = funcNames[currentFunc]
+        
+        if (4 == currentFunc) {
+            label2.stringValue = value
+        } else {
+            label2.stringValue = ""
+        }
     }
     
     func degreeToRadian(angle: Float) -> Double {

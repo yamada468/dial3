@@ -57,5 +57,9 @@ class ViewController: NSViewController {
     func setFunc(f: Int) {
         view1?.currentFunc = f
     }
+    
+    func setValue(s: String) {
+        view1?.value = s
+    }
 }
 
