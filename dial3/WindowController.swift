@@ -13,12 +13,12 @@ class WindowController: NSWindowController {
         var point: NSPoint = NSEvent.mouseLocation
         point.x -= half
         point.y -= half
-        if (half > point.x) {
-            point.x = 0
-        }
-        if (half > point.y) {
-            point.y = 0
-        }
+//        if (half > point.x) {
+//            point.x = 0
+//        }
+//        if (half > point.y) {
+//            point.y = 0
+//        }
         window?.setFrameOrigin(point)
     }
     
