@@ -1,7 +1,7 @@
-# dial3
+# dialM4
 <img src="images/dial2_icon_64.png">
 
-## `dial3` is a Human Interface Device Controller for macos.
+## `dialM4` is a Human Interface Device Controller for macos.
 
 `Target product image`
 
