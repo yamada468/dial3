@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  dial3
+//  dialM4
 //
 //  Created by yamada.468@gmail.com on 2021/05/01.
 //

@@ -17,16 +17,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		900EA0AB263CC30300D99081 /* dial3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dial3.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		900EA0AB263CC30300D99081 /* dialM4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dialM4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		900EA0AE263CC30300D99081 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		900EA0B0263CC30300D99081 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		900EA0B2263CC30300D99081 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		900EA0B5263CC30300D99081 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		900EA0B7263CC30300D99081 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		900EA0B8263CC30300D99081 /* dial3.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = dial3.entitlements; sourceTree = "<group>"; };
+		900EA0B8263CC30300D99081 /* dialM4.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = dialM4.entitlements; sourceTree = "<group>"; };
 		900EA0DA263CC5FF00D99081 /* View1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View1.swift; sourceTree = "<group>"; };
 		900EA0DC263CC85D00D99081 /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
-		900EA0DE263CE57D00D99081 /* dial3-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "dial3-Bridging-Header.h"; sourceTree = "<group>"; };
+		900EA0DE263CE57D00D99081 /* dialM4-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "dialM4-Bridging-Header.h"; sourceTree = "<group>"; };
 		900EA0DF263CE57D00D99081 /* Driver.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Driver.m; sourceTree = "<group>"; };
 		900EA0E1263CE8A200D99081 /* Driver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Driver.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -45,7 +45,7 @@
 		900EA0A2263CC30300D99081 = {
 			isa = PBXGroup;
 			children = (
-				900EA0AD263CC30300D99081 /* dial3 */,
+				900EA0AD263CC30300D99081 /* dialM4 */,
 				900EA0AC263CC30300D99081 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -53,12 +53,12 @@
 		900EA0AC263CC30300D99081 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				900EA0AB263CC30300D99081 /* dial3.app */,
+				900EA0AB263CC30300D99081 /* dialM4.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		900EA0AD263CC30300D99081 /* dial3 */ = {
+		900EA0AD263CC30300D99081 /* dialM4 */ = {
 			isa = PBXGroup;
 			children = (
 				900EA0AE263CC30300D99081 /* AppDelegate.swift */,
@@ -66,22 +66,22 @@
 				900EA0B2263CC30300D99081 /* Assets.xcassets */,
 				900EA0B4263CC30300D99081 /* Main.storyboard */,
 				900EA0B7263CC30300D99081 /* Info.plist */,
-				900EA0B8263CC30300D99081 /* dial3.entitlements */,
+				900EA0B8263CC30300D99081 /* dialM4.entitlements */,
 				900EA0DA263CC5FF00D99081 /* View1.swift */,
 				900EA0DC263CC85D00D99081 /* WindowController.swift */,
 				900EA0DF263CE57D00D99081 /* Driver.m */,
-				900EA0DE263CE57D00D99081 /* dial3-Bridging-Header.h */,
+				900EA0DE263CE57D00D99081 /* dialM4-Bridging-Header.h */,
 				900EA0E1263CE8A200D99081 /* Driver.h */,
 			);
-			path = dial3;
+			path = dialM4;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		900EA0AA263CC30300D99081 /* dial3 */ = {
+		900EA0AA263CC30300D99081 /* dialM4 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 900EA0D1263CC30400D99081 /* Build configuration list for PBXNativeTarget "dial3" */;
+			buildConfigurationList = 900EA0D1263CC30400D99081 /* Build configuration list for PBXNativeTarget "dialM4" */;
 			buildPhases = (
 				900EA0A7263CC30300D99081 /* Sources */,
 				900EA0A8263CC30300D99081 /* Frameworks */,
@@ -91,9 +91,9 @@
 			);
 			dependencies = (
 			);
-			name = dial3;
-			productName = dial3;
-			productReference = 900EA0AB263CC30300D99081 /* dial3.app */;
+			name = dialM4;
+			productName = dialM4;
+			productReference = 900EA0AB263CC30300D99081 /* dialM4.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -111,7 +111,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 900EA0A6263CC30300D99081 /* Build configuration list for PBXProject "dial3" */;
+			buildConfigurationList = 900EA0A6263CC30300D99081 /* Build configuration list for PBXProject "dialM4" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -124,7 +124,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				900EA0AA263CC30300D99081 /* dial3 */,
+				900EA0AA263CC30300D99081 /* dialM4 */,
 			);
 		};
 /* End PBXProject section */
@@ -291,20 +291,20 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = dial3/dial3.entitlements;
+				CODE_SIGN_ENTITLEMENTS = dialM4/dialM4.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = WA75RZ36C7;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = dial3/Info.plist;
+				INFOPLIST_FILE = dialM4/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = jp.dip.yamadaserver.dial3;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.dip.yamadaserver.dialM4;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "dial3/dial3-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "dialM4/dialM4-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
@@ -316,20 +316,20 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = dial3/dial3.entitlements;
+				CODE_SIGN_ENTITLEMENTS = dialM4/dialM4.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = WA75RZ36C7;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = dial3/Info.plist;
+				INFOPLIST_FILE = dialM4/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = jp.dip.yamadaserver.dial3;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.dip.yamadaserver.dialM4;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "dial3/dial3-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "dialM4/dialM4-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -337,7 +337,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		900EA0A6263CC30300D99081 /* Build configuration list for PBXProject "dial3" */ = {
+		900EA0A6263CC30300D99081 /* Build configuration list for PBXProject "dialM4" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				900EA0CF263CC30400D99081 /* Debug */,
@@ -346,7 +346,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		900EA0D1263CC30400D99081 /* Build configuration list for PBXNativeTarget "dial3" */ = {
+		900EA0D1263CC30400D99081 /* Build configuration list for PBXNativeTarget "dialM4" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				900EA0D2263CC30400D99081 /* Debug */,

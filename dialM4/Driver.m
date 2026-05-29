@@ -1,14 +1,47 @@
 //
 //  driver.m
-//  dial3
+//  dialM4
 //
 //  Created by yamada.468@gmail.com on 2021/05/02.
 //
 
 #import "Driver.h"
-#import "dial3-Swift.h"
+#import "dialM4-Swift.h"
 #import <CoreAudio/CoreAudio.h>
 #import <AudioToolbox/AudioToolbox.h>
+#import <Cocoa/Cocoa.h>
+#import <IOKit/hidsystem/ev_keymap.h>
+
+void postBrightnessKey(int keyType) {
+    NSEvent *eventDown = [NSEvent otherEventWithType:NSEventTypeSystemDefined
+                                            location:NSZeroPoint
+                                       modifierFlags:0xa00
+                                           timestamp:0
+                                        windowNumber:0
+                                             context:nil
+                                             subtype:8
+                                               data1:((keyType << 16) | 0xa00)
+                                               data2:-1];
+    CGEventRef cgEventDown = [eventDown CGEvent];
+    if (cgEventDown) {
+        CGEventPost(kCGHIDEventTap, cgEventDown);
+    }
+    
+    NSEvent *eventUp = [NSEvent otherEventWithType:NSEventTypeSystemDefined
+                                          location:NSZeroPoint
+                                     modifierFlags:0xb00
+                                         timestamp:0
+                                      windowNumber:0
+                                           context:nil
+                                           subtype:8
+                                             data1:((keyType << 16) | 0xb00)
+                                             data2:-1];
+    CGEventRef cgEventUp = [eventUp CGEvent];
+    if (cgEventUp) {
+        CGEventPost(kCGHIDEventTap, cgEventUp);
+    }
+}
+
 
 @implementation Driver
 
@@ -189,14 +222,21 @@ void _handleInput(void *context, IOReturn result, void *sender, IOHIDValueRef va
                 } else if (mode == MODE_BRITE) {
                     choice = CHOICE_SET;
                     
+                    BOOL valueSet = NO;
                     if (0 != displayID) {
                         io_service_t service = CGDisplayIOServicePort(displayID);
                         float brightness = .0;
-                        IODisplayGetFloatParameter(service, kNilOptions, kDisplayBrightness, &brightness);
-                        brightness = round(brightness*100)/100;
-                        NSString *s = [NSString stringWithFormat:@"%1.2f", brightness];
-                        NSLog(@"volume : %@", s);
-                        [instance async_setValueWithS:s];
+                        kern_return_t kr = IODisplayGetFloatParameter(service, kNilOptions, kDisplayBrightness, &brightness);
+                        if (kr == kIOReturnSuccess) {
+                            brightness = round(brightness*100)/100;
+                            NSString *s = [NSString stringWithFormat:@"%1.2f", brightness];
+                            NSLog(@"brightness : %@", s);
+                            [instance async_setValueWithS:s];
+                            valueSet = YES;
+                        }
+                    }
+                    if (!valueSet) {
+                        [instance async_setValueWithS:@"--"];
                     }
                 } else {
                     choice = CHOICE_OFF;
@@ -301,29 +341,9 @@ void _changeSignal(uint32_t usage, long value) {
                     AudioObjectSetPropertyData(outputAudioDeviceID, &audioaddr, 0, NULL, size, &volume);
                 }
             } else if (MODE_BRITE == mode) {
-                if (0 != displayID) {
-                    io_service_t service = CGDisplayIOServicePort(displayID);
-                    float brightness = .0;
-                    IODisplayGetFloatParameter(service, kNilOptions, kDisplayBrightness, &brightness);
-                    brightness = round(brightness*100)/100;
-
-                    if (0 > value) {
-                        brightness += BRIGHT_STEP;
-                    } else if (0 < value) {
-                        brightness -= BRIGHT_STEP;
-                    }
-                    if (brightness > BRIGHT_MAX) {
-                        brightness = BRIGHT_MAX;
-                    } else if (brightness < BRIGHT_MIN) {
-                        brightness = BRIGHT_MIN;
-                    }
-
-                    NSString *s = [NSString stringWithFormat:@"%1.2f", brightness];
-                    NSLog(@"brightness : %@", s);
-                    [instance async_setValueWithS:s];
-
-                    IODisplaySetFloatParameter(service, kNilOptions, kDisplayBrightness, brightness);
-                }
+                int keyType = (0 > value) ? NX_KEYTYPE_BRIGHTNESS_UP : NX_KEYTYPE_BRIGHTNESS_DOWN;
+                postBrightnessKey(keyType);
+                [instance async_setValueWithS:@"--"];
             }
             
             for (NSValue *event in events) {
